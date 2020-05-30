@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cardlist from './Cardlist'; //the ../means leave the folder we are in (App.js is in the container folder), then at the level of folders, /components  means go into the components folder to the  /Cardlist  file.
 import SearchBox from './SearchBox';
 import Scroll from './Scroll';
+import ErrorBoundry from './ErrorBoundry';
 import './App.css';
 
  
@@ -38,7 +39,9 @@ class App extends Component {
 		  <h1 classname='f1'>RoboFriends</h1>
 		  <SearchBox searchChange={this.onSearchChange}/>
 		  <Scroll>
+		  <ErrorBoundry>
 		  	<Cardlist robots={filteredRobots} />
+		  </ErrorBoundry>
 		  </Scroll>
 		</div>
 	);
